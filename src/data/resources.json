@@ -1,0 +1,113 @@
+[
+    {
+        "id": 1,
+        "name": "Legal Aid Society",
+        "borough": [
+            "Manhattan",
+            "Brooklyn",
+            "Bronx",
+            "Queens",
+            "Staten Island"
+        ],
+        "case_types": [
+            "housing",
+            "immigration",
+            "family",
+            "criminal"
+        ],
+        "income_limit": "Must be low-income (generally below 200% federal poverty level)",
+        "phone": "212-577-3300",
+        "website": "https://legalaidnyc.org",
+        "address": "199 Water Street, New York, NY 10038",
+        "avg_wait_days": 14,
+        "notes": "One of the largest legal aid organizations in the US. Serves all 5 boroughs."
+    },
+    {
+        "id": 2,
+        "name": "Legal Services NYC",
+        "borough": [
+            "Manhattan",
+            "Brooklyn",
+            "Bronx",
+            "Queens",
+            "Staten Island"
+        ],
+        "case_types": [
+            "housing",
+            "immigration",
+            "family",
+            "employment"
+        ],
+        "income_limit": "Must earn below 200% of federal poverty level",
+        "phone": "917-661-4500",
+        "website": "https://legalservicesnyc.org",
+        "address": "40 Worth Street, New York, NY 10013",
+        "avg_wait_days": 10,
+        "notes": "Largest provider of free civil legal services in NYC."
+    },
+    {
+        "id": 3,
+        "name": "NYC Courts Self-Help Center",
+        "borough": [
+            "Manhattan",
+            "Brooklyn",
+            "Bronx",
+            "Queens",
+            "Staten Island"
+        ],
+        "case_types": [
+            "housing",
+            "family",
+            "criminal",
+            "general"
+        ],
+        "income_limit": "No income limit — open to everyone",
+        "phone": "646-386-5300",
+        "website": "https://www.nycourts.gov/courthelp",
+        "address": "Multiple courthouse locations",
+        "avg_wait_days": 1,
+        "notes": "Walk-in help available at courthouses. No appointment needed. Good first stop."
+    },
+    {
+        "id": 4,
+        "name": "CUNY Law School — Community Legal Resource Network",
+        "borough": [
+            "Queens"
+        ],
+        "case_types": [
+            "housing",
+            "immigration",
+            "family",
+            "employment",
+            "general"
+        ],
+        "income_limit": "Priority for low-income individuals",
+        "phone": "718-340-4300",
+        "website": "https://www.law.cuny.edu/academics/clinics",
+        "address": "2 Court Square, Long Island City, NY 11101",
+        "avg_wait_days": 7,
+        "notes": "Law students supervised by licensed attorneys. Great resource for Queens residents."
+    },
+    {
+        "id": 5,
+        "name": "Safe Horizon",
+        "borough": [
+            "Manhattan",
+            "Brooklyn",
+            "Bronx",
+            "Queens",
+            "Staten Island"
+        ],
+        "case_types": [
+            "family",
+            "criminal",
+            "immigration"
+        ],
+        "income_limit": "No income limit for victims of crime or abuse",
+        "phone": "800-621-4673",
+        "website": "https://www.safehorizon.org",
+        "address": "2 Lafayette Street, New York, NY 10007",
+        "avg_wait_days": 5,
+        "notes": "Specializes in helping victims of domestic violence, trafficking, and crime."
+    }
+]
