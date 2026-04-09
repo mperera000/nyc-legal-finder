@@ -1,4 +1,35 @@
-function ResourceCard({ match, index }) {
+import { useState } from 'react'
+import { supabase } from '../api/supabase'
+
+function ResourceCard({ match, index, caseType, borough }) {
+    const [contacted, setContacted] = useState(false)
+    const [saving, setSaving] = useState(false)
+
+    const handleContacted = async () => {
+        setSaving(true)
+
+        const { error } = await supabase
+            .from('contacts')
+            .insert([
+                {
+                    org_name: match.name,
+                    case_type: caseType,
+                    borough: borough,
+                    status: 'Waiting',
+                    notes: ''
+                }
+            ])
+
+        if (error) {
+            alert('Could not save. Please try again.')
+            console.error(error)
+        } else {
+            setContacted(true)
+        }
+
+        setSaving(false)
+    }
+
     return (
         <div className="bg-white rounded-xl shadow-md p-6 mb-4 border-l-4 border-blue-600">
 
@@ -26,8 +57,8 @@ function ResourceCard({ match, index }) {
                 {match.what_they_do}
             </p>
 
-            {/* Details Grid */}
-            <div className="grid grid-cols-1 gap-2 mb-4">
+            {/* Details */}
+            <div className="grid grid-cols-1 gap-2 mb-5">
                 <div className="flex items-center text-sm text-gray-600">
                     <span className="font-medium w-28">📞 Phone:</span>
                     <a href={`tel:${match.phone}`} className="text-blue-600 hover:underline">
@@ -49,6 +80,21 @@ function ResourceCard({ match, index }) {
                     <span>{match.eligibility}</span>
                 </div>
             </div>
+
+            {/* Contact Button */}
+            {contacted ? (
+                <div className="w-full bg-green-100 text-green-800 font-semibold py-3 rounded-lg text-center">
+                    ✓ Contacted — Added to your tracker
+                </div>
+            ) : (
+                <button
+                    onClick={handleContacted}
+                    disabled={saving}
+                    className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-50"
+                >
+                    {saving ? 'Saving...' : 'I Contacted This Org'}
+                </button>
+            )}
 
         </div>
     )

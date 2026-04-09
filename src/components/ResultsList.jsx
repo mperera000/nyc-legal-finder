@@ -1,6 +1,6 @@
 import ResourceCard from './ResourceCard'
 
-function ResultsList({ results }) {
+function ResultsList({ results, caseType, borough }) {
     return (
         <div className="mt-8">
 
@@ -11,12 +11,17 @@ function ResultsList({ results }) {
                 Based on your situation, here are the best free legal resources for you:
             </p>
 
-            {/* Resource Cards */}
             {results.matches.map((match, index) => (
-                <ResourceCard key={index} match={match} index={index} />
+                <ResourceCard
+                    key={index}
+                    match={match}
+                    index={index}
+                    caseType={caseType}
+                    borough={borough}
+                />
             ))}
 
-            {/* General Advice Box */}
+            {/* General Advice */}
             <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6 mt-4">
                 <h3 className="font-semibold text-yellow-800 mb-2">💡 General Guidance</h3>
                 <p className="text-yellow-900 text-sm leading-relaxed">

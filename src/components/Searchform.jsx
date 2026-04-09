@@ -27,7 +27,7 @@ const incomeRanges = [
     { value: "prefer_not", label: "Prefer not to say" }
 ]
 
-function SearchForm({ setResults, setLoading }) {
+function SearchForm({ setResults, setLoading, onCaseTypeChange, onBoroughChange }) {
     const [borough, setBorough] = useState('')
     const [caseType, setCaseType] = useState('')
     const [income, setIncome] = useState('')
@@ -41,6 +41,8 @@ function SearchForm({ setResults, setLoading }) {
 
         setLoading(true)
         setResults(null)
+        onCaseTypeChange(caseType)
+        onBoroughChange(borough)
 
         try {
             const response = await findLegalResources({ borough, caseType, income, situation })
