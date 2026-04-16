@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import SearchForm from './components/Searchform'
-import ResultsList from './components/ResultsList'
+import SearchForm from './components/Searchform.jsx'
+import ResultsList from './components/ResultsList.jsx'
 import Dashboard from './components/Dashboard.jsx'
 
 function App() {
