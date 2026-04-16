@@ -55,23 +55,18 @@ ${JSON.stringify(resources, null, 2)}
 Return only the JSON response. No extra text.
 `
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    // This calls YOUR Render server, which then safely calls Claude
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    const response = await fetch(`${apiUrl}/api/know-your-rights`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': import.meta.env.VITE_ANTHROPIC_API_KEY,
-            'anthropic-version': '2023-06-01',
-            'anthropic-dangerous-direct-browser-access': 'true'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
-            max_tokens: 1000,
-            system: SYSTEM_PROMPT,
-            messages: [
-                { role: 'user', content: userMessage }
-            ]
+            caseType: caseType,
+            language: language || 'English'
         })
-    })
+    });
+    const data = await response.json();
+    const result = data.summary; // your server returns { summary: "..." }
 
     const data = await response.json()
 

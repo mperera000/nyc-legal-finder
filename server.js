@@ -183,22 +183,18 @@ RULES — follow all of these without exception:
 - Respond entirely in ${language || 'English'}`;
 
     try {
-        // Call the Anthropic Claude API
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        // This calls YOUR Render server, which then safely calls Claude
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+        const response = await fetch(`${apiUrl}/api/know-your-rights`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': process.env.ANTHROPIC_API_KEY,
-                'anthropic-version': '2023-06-01'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                model: 'claude-sonnet-4-5',
-                max_tokens: 300,
-                messages: [
-                    { role: 'user', content: prompt }
-                ]
+                caseType: caseType,
+                language: language || 'English'
             })
         });
+        const data = await response.json();
+        const result = data.summary; // your server returns { summary: "..." };
 
         // If Claude's API returned an error status, report it
         if (!response.ok) {
