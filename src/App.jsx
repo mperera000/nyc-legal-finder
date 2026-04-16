@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SearchForm from './components/SearchForm'
 import ResultsList from './components/ResultsList'
-import Dashboard from './components/Dashboard'
+import Dashboard from './components/Dashboard.jsx'
 
 function App() {
   const [results, setResults] = useState(null)

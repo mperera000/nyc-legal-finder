@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '../api/supabase'
+import supabase from '../api/supabase'
 
 const statusColors = {
     'Waiting': 'bg-yellow-100 text-yellow-800',
@@ -118,8 +118,8 @@ function Dashboard() {
                                     key={status}
                                     onClick={() => updateStatus(contact.id, status)}
                                     className={`text-xs px-3 py-1 rounded-full border transition-colors ${contact.status === status
-                                            ? 'border-blue-600 bg-blue-600 text-white'
-                                            : 'border-gray-300 text-gray-600 hover:border-blue-400'
+                                        ? 'border-blue-600 bg-blue-600 text-white'
+                                        : 'border-gray-300 text-gray-600 hover:border-blue-400'
                                         }`}
                                 >
                                     {status}
