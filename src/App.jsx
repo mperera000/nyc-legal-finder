@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SearchForm from './components/SearchForm'
+import SearchForm from './components/Searchform'
 import ResultsList from './components/ResultsList'
 import Dashboard from './components/Dashboard.jsx'
 
