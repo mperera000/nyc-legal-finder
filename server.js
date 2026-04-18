@@ -27,7 +27,7 @@ app.use(cors({
 
 // Handle preflight OPTIONS requests
 // Browsers send this before every POST to check CORS permissions
-app.options('*', cors());
+app.options('(.*'), cors());
 
 // Allow server to read JSON from request bodies
 app.use(express.json());
