@@ -1,37 +1,38 @@
-// ============================================
-// server.js — Your Express Backend Server
-// ============================================
-// This file creates a backend server that:
-// 1. Sends reminder emails (via Resend)
-// 2. Generates "Know Your Rights" summaries (via Claude)
-// 3. Runs on port 3001 alongside your Vite app on 5174
-// ============================================
+// server.js
+// Express backend server — runs on Render
+// Handles all Claude API calls securely
+// Never called directly from the browser
 
-// Load your secret keys from .env.local
-// Must be the very first thing that runs
 import dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
 
-// Import the tools we need
 import express from 'express';
 import cors from 'cors';
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 
-// Create our Express app — this is the actual server
 const app = express();
 
-// Tell the server to allow requests from your Vite frontend
-// Without this, the browser blocks cross-port communication
+// Allow requests from your Vercel frontend
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'],
+    origin: [
+        'http://localhost:5173',
+        'http://localhost:5174',
+        'http://localhost:3000',
+        'https://nyc-legal-finder.vercel.app'
+    ],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type']
 }));
 
-// Tell the server to read JSON data from incoming requests
-// Without this, req.body will always be undefined
+// Handle preflight OPTIONS requests
+// Browsers send this before every POST to check CORS permissions
+app.options('*', cors());
+
+// Allow server to read JSON from request bodies
 app.use(express.json());
 
-// Create connections to Resend and Supabase using your secret keys
+// Connect to Resend and Supabase
 const resend = new Resend(process.env.RESEND_API_KEY);
 const supabase = createClient(
     process.env.SUPABASE_URL,
@@ -39,57 +40,44 @@ const supabase = createClient(
 );
 
 // ============================================
-// ROUTE 1 — Send Reminder Emails
-// URL: GET http://localhost:3001/api/send-reminder
-// What it does: finds contacts with status "Waiting" 
-// that are older than 3 days and emails them
+// ROUTE 1 — Health Check
+// URL: GET /
+// Lets you confirm the server is running
+// ============================================
+app.get('/', (req, res) => {
+    res.json({ status: 'NYC Legal Finder API is running' });
+});
+
+// ============================================
+// ROUTE 2 — Send Reminder Emails
+// URL: GET /api/send-reminder
 // ============================================
 app.get('/api/send-reminder', async (req, res) => {
     console.log('\n📧 /api/send-reminder called');
 
-    // Calculate what date was 3 days ago
-    // Changed from 7 days to 3 days per your update
     const threeDaysAgo = new Date();
     threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
-    console.log('Looking for contacts older than:', threeDaysAgo.toISOString());
 
-    // Query Supabase for matching contacts
     const { data: contacts, error } = await supabase
         .from('contacts')
         .select('*')
         .eq('status', 'Waiting')
         .lt('contacted_date', threeDaysAgo.toISOString());
 
-    // If Supabase threw an error, report it
     if (error) {
         console.error('Supabase error:', error.message);
-        return res.status(500).json({ error: 'Database error', details: error.message });
+        return res.status(500).json({ error: 'Database error' });
     }
 
-    // If no contacts need reminders, stop here
     if (!contacts || contacts.length === 0) {
-        console.log('No contacts need reminders right now');
         return res.status(200).json({ message: 'No reminders needed', sent: 0 });
     }
 
-    console.log(`Found ${contacts.length} contact(s) that need reminders`);
-
     let emailsSent = 0;
-    let skipped = 0;
-    let errors = [];
 
-    // Loop through each contact and send their reminder email
     for (const contact of contacts) {
-        // Safety check — skip any contact with no email address
         const emailAddress = contact.user_email || contact.email;
-
-        if (!emailAddress) {
-            console.log(`⚠️  Skipping ${contact.org_name} — no email address`);
-            skipped++;
-            continue;
-        }
-
-        console.log(`Sending to: ${emailAddress} for org: ${contact.org_name}`);
+        if (!emailAddress) continue;
 
         try {
             await resend.emails.send({
@@ -102,65 +90,35 @@ app.get('/api/send-reminder', async (req, res) => {
             <p>Hi there,</p>
             <p>You contacted <strong>${contact.org_name}</strong> about a 
             <strong>${contact.case_type || 'legal'}</strong> matter 3 days ago.</p>
-            <p>If you haven't heard back, it may be time to:</p>
-            <ul>
-              <li>Call them directly to follow up</li>
-              <li>Try another organization from our finder</li>
-              <li>Call 311 for additional referrals</li>
-            </ul>
-            <a href="${process.env.VITE_APP_URL || 'http://localhost:5174'}/tracker"
-               style="display: inline-block; background: #1D4ED8; color: white; 
-                      padding: 12px 24px; border-radius: 6px; text-decoration: none;
-                      margin-top: 16px;">
-              Update Your Status →
-            </a>
-            <p style="color: #6B7280; font-size: 14px; margin-top: 24px;">
+            <p>If you haven't heard back, it may be time to follow up or try another resource.</p>
+            <p style="color: #6B7280; font-size: 14px;">
               Sent automatically by NYC Free Legal Sources Finder.
             </p>
           </div>
         `
             });
-
             emailsSent++;
-            console.log(`✅ Email sent to ${emailAddress}`);
-
         } catch (emailError) {
-            console.error(`❌ Failed for ${contact.org_name}:`, emailError.message);
-            errors.push({ org: contact.org_name, error: emailError.message });
+            console.error('Email error:', emailError.message);
         }
     }
 
-    // Return a summary of everything that happened
-    return res.status(200).json({
-        message: 'Reminder run complete',
-        sent: emailsSent,
-        skipped: skipped,
-        failed: errors.length,
-        errors: errors
-    });
+    return res.status(200).json({ sent: emailsSent });
 });
 
-
 // ============================================
-// ROUTE 2 — Know Your Rights AI Summary
-// URL: POST http://localhost:3001/api/know-your-rights
-// What it does: receives a caseType and language,
-// asks Claude to explain the user's basic rights,
-// returns a plain-English 3-sentence summary
+// ROUTE 3 — Know Your Rights AI Summary
+// URL: POST /api/know-your-rights
 // ============================================
 app.post('/api/know-your-rights', async (req, res) => {
     console.log('\n📋 /api/know-your-rights called');
 
-    // Pull caseType and language out of the request body
     const { caseType, language } = req.body;
-    console.log('caseType:', caseType, '| language:', language);
 
-    // Make sure we received a caseType — it's required
     if (!caseType) {
         return res.status(400).json({ error: 'caseType is required' });
     }
 
-    // Build the prompt we send to Claude
     const prompt = `You are a plain-language legal information assistant for New York City residents.
 
 The user has selected this legal situation: ${caseType}
@@ -169,63 +127,175 @@ Respond in: ${language || 'English'}
 Write exactly 3 sentences:
 Sentence 1: Explain what a "${caseType}" legal situation generally involves in simple everyday words.
 Sentence 2: Describe one important right or protection that people in this situation have in New York.
-Sentence 3: Suggest one clear, concrete first step this person can take right now.
+Sentence 3: Suggest one clear concrete first step this person can take right now.
 
-RULES — follow all of these without exception:
+RULES:
 - Write at an 8th grade reading level
 - Do NOT give specific legal advice
 - Do NOT make promises like "you will win" or "you are guaranteed"
-- Do NOT cite specific laws, statutes, or case numbers
-- If you use any legal term, immediately explain it in plain words
+- Do NOT cite specific laws or statute numbers
 - Do NOT start your response with "I" or "As an AI"
-- Start directly with information about the legal situation
-- Keep your entire response to exactly 3 sentences — no more, no less
+- Keep your response to exactly 3 sentences
 - Respond entirely in ${language || 'English'}`;
 
     try {
-        // This calls YOUR Render server, which then safely calls Claude
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-        const response = await fetch(`${apiUrl}/api/know-your-rights`, {
+        const response = await fetch('https://api.anthropic.com/v1/messages', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': process.env.ANTHROPIC_API_KEY,
+                'anthropic-version': '2023-06-01'
+            },
             body: JSON.stringify({
-                caseType: caseType,
-                language: language || 'English'
+                model: 'claude-sonnet-4-5',
+                max_tokens: 300,
+                messages: [{ role: 'user', content: prompt }]
             })
         });
-        const data = await response.json();
-        const result = data.summary; // your server returns { summary: "..." };
 
-        // If Claude's API returned an error status, report it
         if (!response.ok) {
             const errData = await response.json();
             console.error('Claude API error:', errData);
-            return res.status(500).json({ error: 'AI service error', details: errData });
+            return res.status(500).json({ error: 'AI service error' });
         }
 
-        // Pull the actual text out of Claude's response
-        // Claude returns JSON with a specific structure — content[0].text is the message
-        const data = await response.json();
-        const summary = data.content[0].text;
-        console.log('✅ Claude responded successfully');
+        const claudeData = await response.json();
+        const summary = claudeData.content[0].text;
+        console.log('✅ Claude responded');
 
-        // Send the summary back to the frontend
         return res.status(200).json({ summary });
 
     } catch (error) {
-        console.error('Error calling Claude:', error.message);
-        return res.status(500).json({ error: 'Something went wrong', details: error.message });
+        console.error('Error:', error.message);
+        return res.status(500).json({ error: 'Something went wrong' });
     }
 });
 
+// ============================================
+// ROUTE 4 — Find Matching Legal Resources
+// URL: POST /api/find-resources
+// ============================================
+app.post('/api/find-resources', async (req, res) => {
+    console.log('\n🔍 /api/find-resources called');
+
+    const { borough, caseType, income, situation, language, resources } = req.body;
+
+    if (!borough || !caseType) {
+        return res.status(400).json({ error: 'Borough and case type are required' });
+    }
+
+    if (!resources || resources.length === 0) {
+        return res.status(400).json({ error: 'No resources data received' });
+    }
+
+    const systemPrompt = `You are a free legal resource assistant for NYC residents.
+Your job is to help people find free or low-cost legal aid based on their situation.
+
+You will be given:
+- The user's borough
+- Their type of legal issue
+- Their approximate income level
+- A brief description of their situation (optional)
+- A list of real legal aid organizations in NYC
+
+Your job is to:
+1. Pick the 2-3 best matching organizations for this person
+2. For each one write a short plain-English explanation of what they do (2 sentences max)
+3. Explain specifically WHY this org is a good match for this person
+4. Include their phone number and website
+5. Give a realistic wait time expectation
+
+You MUST respond in this exact JSON format and nothing else:
+{
+  "matches": [
+    {
+      "name": "Organization name here",
+      "why_good_match": "One sentence explaining why this is right for them",
+      "what_they_do": "One sentence describing the organization",
+      "phone": "phone number",
+      "website": "website url",
+      "wait_time": "realistic wait time e.g. 5-10 business days",
+      "eligibility": "who qualifies"
+    }
+  ],
+  "general_advice": "2-3 sentences of warm encouraging general guidance. Never give legal advice."
+}
+
+Rules:
+- Never give actual legal advice
+- Always use simple language
+- Only use organizations from the list provided
+- Never make up organizations or phone numbers
+- Always be warm and encouraging
+- Respond entirely in ${language || 'English'}`;
+
+    const userMessage = `
+Please find legal resources for this person:
+
+Borough: ${borough}
+Legal Issue Type: ${caseType}
+Annual Income: ${income}
+Their situation: ${situation}
+
+Here are all the available NYC legal aid organizations:
+${JSON.stringify(resources, null, 2)}
+
+Return only the JSON response. No extra text.`;
+
+    try {
+        const response = await fetch('https://api.anthropic.com/v1/messages', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': process.env.ANTHROPIC_API_KEY,
+                'anthropic-version': '2023-06-01'
+            },
+            body: JSON.stringify({
+                model: 'claude-sonnet-4-5',
+                max_tokens: 1500,
+                system: systemPrompt,
+                messages: [{ role: 'user', content: userMessage }]
+            })
+        });
+
+        if (!response.ok) {
+            const errData = await response.json();
+            console.error('Claude API error:', errData);
+            return res.status(500).json({ error: 'AI service error' });
+        }
+
+        const claudeData = await response.json();
+        const rawText = claudeData.content[0].text;
+        console.log('✅ Claude responded');
+
+        try {
+            const cleaned = rawText.replace(/```json|```/g, '').trim();
+            const parsed = JSON.parse(cleaned);
+            return res.status(200).json(parsed);
+        } catch (parseError) {
+            const jsonMatch = rawText.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+                const parsed = JSON.parse(jsonMatch[0]);
+                return res.status(200).json(parsed);
+            }
+            console.error('Could not parse Claude response:', rawText);
+            return res.status(500).json({ error: 'Could not parse AI response' });
+        }
+
+    } catch (error) {
+        console.error('Error:', error.message);
+        return res.status(500).json({ error: 'Something went wrong' });
+    }
+});
 
 // ============================================
 // Start the server
-// It listens on port 3001 for incoming requests
 // ============================================
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log(`\n✅ Backend server running on http://localhost:${PORT}`);
-    console.log(`   Reminder route:    GET  http://localhost:${PORT}/api/send-reminder`);
-    console.log(`   Know Your Rights:  POST http://localhost:${PORT}/api/know-your-rights\n`);
+    console.log(`\n✅ Backend server running on port ${PORT}`);
+    console.log(`   Health check:      GET  /`);
+    console.log(`   Reminder route:    GET  /api/send-reminder`);
+    console.log(`   Know Your Rights:  POST /api/know-your-rights`);
+    console.log(`   Find Resources:    POST /api/find-resources\n`);
 });
