@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import supabase from '../api/supabase'
+
 function ResourceCard({ match, index, caseType, borough }) {
     const [contacted, setContacted] = useState(false)
     const [saving, setSaving] = useState(false)
