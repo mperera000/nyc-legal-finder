@@ -22,12 +22,11 @@ app.use(cors({
         'https://nyc-legal-finder.vercel.app'
     ],
     methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 }));
 
-// Handle preflight OPTIONS requests
-// Browsers send this before every POST to check CORS permissions
-app.options('(.*)', cors());
 
 // Allow server to read JSON from request bodies
 app.use(express.json());
