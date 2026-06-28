@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "orgs": "Buscar Ayuda",
+    "guides": "Guías",
+    "tracker": "Mi Seguimiento"
+  },
+  "home": {
+    "title": "Buscador de Ayuda Legal en NYC",
+    "subtitle": "Ayuda legal gratuita para neoyorquinos",
+    "description": "Toda la información se guarda en su dispositivo — no necesita crear una cuenta.",
+    "find_cta": "Buscar ayuda legal",
+    "find_desc": "Encuentre organizaciones que coincidan con su situación",
+    "tracker_cta": "Mi Seguimiento",
+    "tracker_desc": "organizaciones guardadas",
+    "tracker_empty_desc": "Empezar a guardar",
+    "guides_cta": "Guías",
+    "guides_desc": "Artículos en lenguaje sencillo para su tipo de caso",
+    "needs_attention": "Requiere atención",
+    "no_attention": "No hay seguimientos pendientes",
+    "follow_up_overdue": "Sin respuesta en {{days}} días",
+    "disclaimer": "Esta aplicación le ayuda a encontrar recursos — no es asesoramiento legal."
+  },
+  "orgs": {
+    "title": "Buscar Ayuda Legal",
+    "subtitle": "Responda 3 preguntas rápidas para ver qué organizaciones pueden ayudarle.",
+    "walk_ins": "Se aceptan visitas sin cita",
+    "phone": "Teléfono",
+    "hours": "Horario",
+    "languages": "Idiomas",
+    "website": "Visitar sitio web",
+    "income_limit": "Límite de ingresos: {{pct}}% FPL",
+    "no_results": "Ninguna organización coincide con su selección. Intente ampliar los filtros.",
+    "results_count": "{{count}} organización encontrada",
+    "results_count_plural": "{{count}} organizaciones encontradas",
+    "start_over": "Empezar de nuevo",
+    "add_outreach": "Agregar a Mi Seguimiento",
+    "added_outreach": "Agregado a Mi Seguimiento",
+    "case_types_handled": "Tipos de casos",
+    "boroughs_served": "Condados"
+  },
+  "steps": {
+    "step": "Paso {{n}} de 3",
+    "back": "Atrás",
+    "step1_title": "¿En qué condado se encuentra?",
+    "step2_title": "¿Qué tipo de ayuda legal necesita?",
+    "step3_title": "¿Cuál es el ingreso anual aproximado de su hogar?",
+    "any_borough": "Cualquiera / No estoy seguro",
+    "any_case": "No estoy seguro todavía"
+  },
+  "boroughs": {
+    "Manhattan": "Manhattan",
+    "Brooklyn": "Brooklyn",
+    "Bronx": "El Bronx",
+    "Queens": "Queens",
+    "Staten Island": "Staten Island"
+  },
+  "caseTypes": {
+    "Housing": "Vivienda",
+    "Immigration": "Inmigración",
+    "Benefits": "Beneficios públicos",
+    "Consumer Debt": "Deudas de consumidor",
+    "Family Law": "Derecho familiar",
+    "Employment": "Empleo",
+    "Criminal Defense": "Defensa penal",
+    "Civil Rights": "Derechos civiles",
+    "Health Law": "Derecho de salud",
+    "Domestic Violence": "Violencia doméstica",
+    "Divorce": "Divorcio",
+    "Child Custody": "Custodia de menores",
+    "Civil / Small Claims": "Civil / Reclamaciones menores"
+  },
+  "income": {
+    "under_15k": "Menos de $15,000",
+    "15k_25k": "$15,000 – $25,000",
+    "25k_40k": "$25,000 – $40,000",
+    "40k_55k": "$40,000 – $55,000",
+    "over_55k": "Más de $55,000"
+  },
+  "eligibility": {
+    "likely": "Probablemente elegible",
+    "check": "Verificar ingresos",
+    "unlikely": "Puede no calificar",
+    "likely_desc": "Sus ingresos parecen estar dentro del límite de esta organización.",
+    "check_desc": "Sus ingresos están cerca del límite — llame para confirmar elegibilidad.",
+    "unlikely_desc": "Sus ingresos pueden estar por encima del límite de esta organización."
+  },
+  "tracker": {
+    "title": "Mi Seguimiento",
+    "subtitle": "Organizaciones que está rastreando. Todos los datos permanecen en su dispositivo.",
+    "empty": "Aún no ha agregado ninguna organización. Use Buscar Ayuda para comenzar.",
+    "status_saved": "Aún no contactado",
+    "status_contacted": "Contactado",
+    "status_org_replied": "La organización respondió",
+    "mark_contacted": "Los contacté",
+    "mark_org_replied": "Me respondieron",
+    "reset": "Empezar de nuevo",
+    "notes_placeholder": "Agregue notas sobre su contacto con esta organización...",
+    "contacted_date": "Fecha en que los contacté",
+    "followup_reminder": "Recordatorio de seguimiento",
+    "followup_reminder_hint": "Le notificaremos en esta fecha para hacer seguimiento si no ha recibido respuesta.",
+    "remove": "Eliminar",
+    "follow_up_due": "Dar seguimiento",
+    "overdue_label": "Sin respuesta en {{days}} días",
+    "resolved_label": "La organización se comunicó con usted"
+  },
+  "guides": {
+    "title": "Guías Legales",
+    "subtitle": "Artículos y recursos en lenguaje sencillo — sin tecnicismos.",
+    "filter_label": "Filtrar por tipo de caso",
+    "all_types": "Todos los temas",
+    "source": "Fuente",
+    "open_guide": "Leer guía",
+    "empty": "Aún no hay guías para este tema.",
+    "language_both": "EN + ES",
+    "language_en": "Solo inglés",
+    "language_es": "Solo español"
+  },
+  "notifications": {
+    "permission_prompt": "Permita notificaciones para que podamos recordarle hacer seguimiento con las organizaciones.",
+    "reminder_title": "Es hora de dar seguimiento",
+    "reminder_body": "No olvide contactar a {{orgName}}."
+  },
+  "errors": {
+    "load_failed": "No pudimos cargar esta información. Intente actualizar la página.",
+    "storage_failed": "No pudimos guardar sus datos. Verifique que su navegador permita el almacenamiento local."
+  }
+}

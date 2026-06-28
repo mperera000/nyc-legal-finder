@@ -1,0 +1,72 @@
+[
+  {
+    "id": "legal-services-nyc",
+    "name": "Legal Services NYC",
+    "boroughs": ["Manhattan", "Brooklyn", "Bronx", "Queens", "Staten Island"],
+    "caseTypes": ["Housing", "Immigration", "Benefits", "Consumer Debt", "Family Law", "Employment"],
+    "incomeLimit_pct_fpl": 200,
+    "phone": "(917) 661-4500",
+    "hours": "Mon–Fri 9am–5pm",
+    "languages": ["English", "Spanish", "Chinese", "Haitian Creole", "Bengali"],
+    "walkIns": false,
+    "website": "https://www.legalservicesnyc.org",
+    "notes_en": "Largest provider of free civil legal services in NYC. Call to be screened for eligibility and get matched to the right office.",
+    "notes_es": "El mayor proveedor de servicios legales civiles gratuitos en NYC. Llame para ser evaluado y conectado con la oficina correcta."
+  },
+  {
+    "id": "legal-aid-society",
+    "name": "The Legal Aid Society",
+    "boroughs": ["Manhattan", "Brooklyn", "Bronx", "Queens", "Staten Island"],
+    "caseTypes": ["Criminal Defense", "Housing", "Family Law", "Immigration", "Benefits", "Civil Rights"],
+    "incomeLimit_pct_fpl": 200,
+    "phone": "(212) 577-3300",
+    "hours": "Mon–Fri 9am–5pm",
+    "languages": ["English", "Spanish", "Chinese", "Russian", "Arabic"],
+    "walkIns": false,
+    "website": "https://www.legalaidnyc.org",
+    "notes_en": "One of the oldest and largest legal aid organizations in the US. Handles both civil and criminal cases for low-income New Yorkers.",
+    "notes_es": "Una de las organizaciones de ayuda legal más antiguas y grandes de EE.UU. Atiende casos civiles y penales para neoyorquinos de bajos ingresos."
+  },
+  {
+    "id": "nylag",
+    "name": "New York Legal Assistance Group (NYLAG)",
+    "boroughs": ["Manhattan", "Brooklyn", "Bronx", "Queens", "Staten Island"],
+    "caseTypes": ["Immigration", "Housing", "Family Law", "Benefits", "Health Law", "Domestic Violence"],
+    "incomeLimit_pct_fpl": 300,
+    "phone": "(212) 613-5000",
+    "hours": "Mon–Fri 9am–5pm; Walk-in clinics vary by site",
+    "languages": ["English", "Spanish", "Chinese", "Russian", "French"],
+    "walkIns": true,
+    "website": "https://www.nylag.org",
+    "notes_en": "Offers free civil legal services and has walk-in clinics at several locations. Slightly higher income limit than many other providers.",
+    "notes_es": "Ofrece servicios legales civiles gratuitos y tiene clínicas de visita sin cita en varios lugares. Tiene un límite de ingresos un poco más alto que muchos otros proveedores."
+  },
+  {
+    "id": "brooklyn-defender-services",
+    "name": "Brooklyn Defender Services",
+    "boroughs": ["Brooklyn"],
+    "caseTypes": ["Criminal Defense", "Family Law", "Housing", "Immigration", "Benefits"],
+    "incomeLimit_pct_fpl": 200,
+    "phone": "(718) 254-0700",
+    "hours": "Mon–Fri 9am–5pm",
+    "languages": ["English", "Spanish", "Haitian Creole", "Chinese"],
+    "walkIns": false,
+    "website": "https://www.brooklyndefender.org",
+    "notes_en": "Provides holistic public defense to Brooklyn residents, addressing criminal, family, immigration, and civil legal issues together.",
+    "notes_es": "Proporciona defensa pública integral a los residentes de Brooklyn, abordando problemas legales penales, familiares, de inmigración y civiles en conjunto."
+  },
+  {
+    "id": "her-justice",
+    "name": "Her Justice",
+    "boroughs": ["Manhattan", "Brooklyn", "Bronx", "Queens"],
+    "caseTypes": ["Family Law", "Divorce", "Immigration", "Domestic Violence", "Child Custody"],
+    "incomeLimit_pct_fpl": 200,
+    "phone": "(212) 966-0200",
+    "hours": "Mon–Fri 10am–4pm",
+    "languages": ["English", "Spanish", "Chinese", "Arabic", "French"],
+    "walkIns": false,
+    "website": "https://www.herjustice.org",
+    "notes_en": "Serves women living in poverty in NYC, connecting them with volunteer lawyers for family law, divorce, and immigration matters.",
+    "notes_es": "Sirve a mujeres en situación de pobreza en NYC, conectándolas con abogados voluntarios para asuntos de derecho familiar, divorcio e inmigración."
+  }
+]

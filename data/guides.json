@@ -1,0 +1,371 @@
+[
+  {
+    "id": "tenant-rights-hpd",
+    "title_en": "Tenant rights and responsibilities — NYC HPD",
+    "title_es": "Derechos y responsabilidades de los inquilinos — NYC HPD",
+    "url": "https://www.nyc.gov/site/hpd/services-and-information/tenants-rights-and-responsibilities.page",
+    "source": "NYC Housing Preservation & Development",
+    "caseTypes": ["Housing"],
+    "language": "both"
+  },
+  {
+    "id": "eviction-prevention-hpd",
+    "title_en": "Eviction prevention resources — NYC HPD",
+    "title_es": "Recursos para prevención de desalojo — NYC HPD",
+    "url": "https://www.nyc.gov/site/hpd/services-and-information/eviction-prevention.page",
+    "source": "NYC Housing Preservation & Development",
+    "caseTypes": ["Housing"],
+    "language": "both"
+  },
+  {
+    "id": "good-cause-eviction",
+    "title_en": "Good Cause Eviction law — new NYC tenant protections (2024)",
+    "title_es": "Ley de Desalojo por Causa Justificada — nuevas protecciones para inquilinos (2024)",
+    "url": "https://www.nyc.gov/site/hpd/services-and-information/good-cause-eviction.page",
+    "source": "NYC Housing Preservation & Development",
+    "caseTypes": ["Housing"],
+    "language": "both"
+  },
+  {
+    "id": "illegal-lockout",
+    "title_en": "Illegal lockouts — what to do if you are locked out",
+    "title_es": "Desalojos ilegales — qué hacer si le cambian la cerradura",
+    "url": "https://www.nyc.gov/site/mayorspeu/resources/illegal-lockouts.page",
+    "source": "NYC Mayor's Office",
+    "caseTypes": ["Housing"],
+    "language": "both"
+  },
+  {
+    "id": "legal-services-tenants-hra",
+    "title_en": "Free legal services for tenants — NYC HRA",
+    "title_es": "Servicios legales gratuitos para inquilinos — NYC HRA",
+    "url": "https://www.nyc.gov/site/hra/help/legal-services-for-tenants.page",
+    "source": "NYC Human Resources Administration",
+    "caseTypes": ["Housing"],
+    "language": "both"
+  },
+  {
+    "id": "housing-issues-lawhelpny",
+    "title_en": "Housing legal guides — LawHelpNY topic library",
+    "title_es": "Guías legales de vivienda — biblioteca de temas de LawHelpNY",
+    "url": "https://www.lawhelpny.org/issues/housing",
+    "source": "LawHelpNY",
+    "caseTypes": ["Housing"],
+    "language": "both"
+  },
+  {
+    "id": "warranty-habitability-law",
+    "title_en": "NY Real Property Law § 235-b — warranty of habitability (actual statute)",
+    "title_es": "Ley de Bienes Raíces de NY § 235-b — garantía de habitabilidad (texto legal)",
+    "url": "https://www.nysenate.gov/legislation/laws/RPP/235-B",
+    "source": "NY State Legislature",
+    "caseTypes": ["Housing"],
+    "language": "en"
+  },
+  {
+    "id": "housing-maintenance-code",
+    "title_en": "NYC Housing Maintenance Code — landlord obligations (actual law)",
+    "title_es": "Código de Mantenimiento de Vivienda de NYC — obligaciones del propietario (ley)",
+    "url": "https://www.nyc.gov/site/hpd/services-and-information/housing-maintenance-code.page",
+    "source": "NYC HPD",
+    "caseTypes": ["Housing"],
+    "language": "both"
+  },
+  {
+    "id": "immigration-issues-lawhelpny",
+    "title_en": "Immigration legal guides — LawHelpNY topic library",
+    "title_es": "Guías legales de inmigración — biblioteca de temas de LawHelpNY",
+    "url": "https://www.lawhelpny.org/issues/immigrationimmigrants",
+    "source": "LawHelpNY",
+    "caseTypes": ["Immigration"],
+    "language": "both"
+  },
+  {
+    "id": "nylag-immigration-help",
+    "title_en": "NYLAG immigration services — what help is available",
+    "title_es": "Servicios de inmigración de NYLAG — qué ayuda está disponible",
+    "url": "https://nylag.org/immigration/",
+    "source": "NYLAG",
+    "caseTypes": ["Immigration"],
+    "language": "en"
+  },
+  {
+    "id": "legal-aid-immigration",
+    "title_en": "Immigration and deportation help — Legal Aid Society",
+    "title_es": "Ayuda con inmigración y deportación — Legal Aid Society",
+    "url": "https://legalaidnyc.org/get-help/immigration-deportation/",
+    "source": "The Legal Aid Society",
+    "caseTypes": ["Immigration"],
+    "language": "en"
+  },
+  {
+    "id": "nyifup-deportation",
+    "title_en": "NY Immigrant Family Unity Project — free deportation defense",
+    "title_es": "Proyecto de Unidad Familiar Inmigrante de NY — defensa de deportación gratuita",
+    "url": "https://legalaidnyc.org/get-help/immigration-deportation/what-you-need-to-know-about-the-new-york-immigrant-family-unity-project-nyifup/",
+    "source": "The Legal Aid Society",
+    "caseTypes": ["Immigration"],
+    "language": "en"
+  },
+  {
+    "id": "daca-uscis",
+    "title_en": "DACA — official USCIS information and how to apply",
+    "title_es": "DACA — información oficial de USCIS y cómo aplicar",
+    "url": "https://www.uscis.gov/DACA",
+    "source": "USCIS (federal)",
+    "caseTypes": ["Immigration"],
+    "language": "both"
+  },
+  {
+    "id": "family-issues-lawhelpny",
+    "title_en": "Family law guides — divorce, custody, support (LawHelpNY)",
+    "title_es": "Guías de derecho familiar — divorcio, custodia, manutención (LawHelpNY)",
+    "url": "https://www.lawhelpny.org/issues/family-juvenile",
+    "source": "LawHelpNY",
+    "caseTypes": ["Family Law", "Divorce", "Child Custody"],
+    "language": "both"
+  },
+  {
+    "id": "uncontested-divorce-courts",
+    "title_en": "Uncontested divorce DIY program — NY Courts",
+    "title_es": "Programa de divorcio no disputado — Tribunales de NY",
+    "url": "https://www.nycourts.gov/help/diy-forms/uncontested-divorce-program",
+    "source": "NY Courts Self-Help",
+    "caseTypes": ["Divorce", "Family Law"],
+    "language": "both"
+  },
+  {
+    "id": "divorce-faqs-courts",
+    "title_en": "Divorce frequently asked questions — NY Courts",
+    "title_es": "Preguntas frecuentes sobre divorcio — Tribunales de NY",
+    "url": "https://ww2.nycourts.gov/divorce/info_faqs.shtml",
+    "source": "NY Courts Self-Help",
+    "caseTypes": ["Divorce", "Family Law"],
+    "language": "both"
+  },
+  {
+    "id": "family-court-diy",
+    "title_en": "Family court DIY forms — custody, support, orders of protection",
+    "title_es": "Formularios de tribunal familiar — custodia, manutención, órdenes de protección",
+    "url": "https://nycourts.gov/courthelp/diy/familycourt.shtml",
+    "source": "NY Courts Self-Help",
+    "caseTypes": ["Child Custody", "Family Law", "Domestic Violence"],
+    "language": "both"
+  },
+  {
+    "id": "domestic-relations-law",
+    "title_en": "NY Domestic Relations Law — divorce and custody statutes (actual law text)",
+    "title_es": "Ley de Relaciones Domésticas de NY — texto legal de divorcio y custodia",
+    "url": "https://www.nysenate.gov/legislation/laws/DOM",
+    "source": "NY State Legislature",
+    "caseTypes": ["Divorce", "Family Law", "Child Custody"],
+    "language": "en"
+  },
+  {
+    "id": "safety-issues-lawhelpny",
+    "title_en": "Domestic violence legal guides — LawHelpNY",
+    "title_es": "Guías legales sobre violencia doméstica — LawHelpNY",
+    "url": "https://www.lawhelpny.org/issues/safety",
+    "source": "LawHelpNY",
+    "caseTypes": ["Domestic Violence"],
+    "language": "both"
+  },
+  {
+    "id": "dv-legal-aid",
+    "title_en": "Domestic violence legal help — Legal Aid Society",
+    "title_es": "Ayuda legal por violencia doméstica — Legal Aid Society",
+    "url": "https://legalaidnyc.org/programs-projects-units/domestic-violence-project/",
+    "source": "The Legal Aid Society",
+    "caseTypes": ["Domestic Violence"],
+    "language": "en"
+  },
+  {
+    "id": "family-protection-act",
+    "title_en": "NY Family Court Act Article 8 — family offense proceedings (actual statute)",
+    "title_es": "Ley del Tribunal de Familia de NY Art. 8 — procedimientos por ofensas familiares",
+    "url": "https://www.nysenate.gov/legislation/laws/FCT/A8",
+    "source": "NY State Legislature",
+    "caseTypes": ["Domestic Violence", "Family Law"],
+    "language": "en"
+  },
+  {
+    "id": "benefits-issues-lawhelpny",
+    "title_en": "Public benefits guides — SNAP, Medicaid, cash assistance (LawHelpNY)",
+    "title_es": "Guías de beneficios públicos — SNAP, Medicaid, asistencia (LawHelpNY)",
+    "url": "https://www.lawhelpny.org/issues/public-benefits",
+    "source": "LawHelpNY",
+    "caseTypes": ["Benefits"],
+    "language": "both"
+  },
+  {
+    "id": "snap-nyc-hra",
+    "title_en": "Apply for SNAP food assistance — NYC HRA",
+    "title_es": "Cómo solicitar asistencia alimentaria SNAP — NYC HRA",
+    "url": "https://www.nyc.gov/site/hra/help/snap-food-stamps.page",
+    "source": "NYC Human Resources Administration",
+    "caseTypes": ["Benefits"],
+    "language": "both"
+  },
+  {
+    "id": "medicaid-ny",
+    "title_en": "Medicaid in New York — who qualifies and how to apply",
+    "title_es": "Medicaid en Nueva York — quién califica y cómo aplicar",
+    "url": "https://www.health.ny.gov/health_care/medicaid/",
+    "source": "NY State Dept. of Health",
+    "caseTypes": ["Benefits", "Health Law"],
+    "language": "both"
+  },
+  {
+    "id": "employment-issues-lawhelpny",
+    "title_en": "Employment and workers' rights guides — LawHelpNY",
+    "title_es": "Guías de derechos laborales — LawHelpNY",
+    "url": "https://www.lawhelpny.org/issues/workers-rights",
+    "source": "LawHelpNY",
+    "caseTypes": ["Employment"],
+    "language": "both"
+  },
+  {
+    "id": "workers-rights-ag",
+    "title_en": "Workers' rights — file a wage complaint with NY Attorney General",
+    "title_es": "Derechos laborales — presente una queja salarial ante el Fiscal General de NY",
+    "url": "https://ag.ny.gov/resources/individuals/workers-rights",
+    "source": "NY Attorney General",
+    "caseTypes": ["Employment"],
+    "language": "both"
+  },
+  {
+    "id": "immigrant-workers-ag",
+    "title_en": "Immigrant workers' rights — protections regardless of status",
+    "title_es": "Derechos de trabajadores inmigrantes — protecciones sin importar estatus",
+    "url": "https://ag.ny.gov/immigrants-rights/immigrant-workers-rights",
+    "source": "NY Attorney General",
+    "caseTypes": ["Employment", "Immigration"],
+    "language": "both"
+  },
+  {
+    "id": "unemployment-ny",
+    "title_en": "Apply for unemployment insurance — NY Dept. of Labor",
+    "title_es": "Solicitar seguro de desempleo — Dept. de Trabajo de NY",
+    "url": "https://dol.ny.gov/unemployment",
+    "source": "NY Dept. of Labor",
+    "caseTypes": ["Employment", "Benefits"],
+    "language": "both"
+  },
+  {
+    "id": "ny-labor-law-wages",
+    "title_en": "NY Labor Law Article 6 — wage payment statutes (actual law text)",
+    "title_es": "Ley Laboral de NY Art. 6 — estatutos de pago de salarios (texto legal)",
+    "url": "https://www.nysenate.gov/legislation/laws/LAB/A6",
+    "source": "NY State Legislature",
+    "caseTypes": ["Employment"],
+    "language": "en"
+  },
+  {
+    "id": "small-claims-courts",
+    "title_en": "Small claims court — how to sue for money in NYC",
+    "title_es": "Tribunal de reclamaciones menores — cómo demandar en NYC",
+    "url": "https://www.nycourts.gov/courts/nyc/smallclaims/index.shtml",
+    "source": "NY Courts",
+    "caseTypes": ["Civil / Small Claims"],
+    "language": "both"
+  },
+  {
+    "id": "courthelp-main",
+    "title_en": "NY CourtHelp — self-help legal resources for all case types",
+    "title_es": "Ayuda del Tribunal de NY — recursos de autoayuda para todos los tipos de casos",
+    "url": "https://www.nycourts.gov/courthelp",
+    "source": "NY Courts Self-Help",
+    "caseTypes": ["Civil / Small Claims", "Housing", "Family Law", "Consumer Debt"],
+    "language": "both"
+  },
+  {
+    "id": "consumer-issues-lawhelpny",
+    "title_en": "Debt and consumer rights guides — LawHelpNY",
+    "title_es": "Guías de derechos del consumidor y deudas — LawHelpNY",
+    "url": "https://www.lawhelpny.org/issues/consumer",
+    "source": "LawHelpNY",
+    "caseTypes": ["Consumer Debt"],
+    "language": "both"
+  },
+  {
+    "id": "debt-collection-ag",
+    "title_en": "Debt collection — your rights and how to file a complaint (NY AG)",
+    "title_es": "Cobro de deudas — sus derechos y cómo presentar una queja (Fiscal General)",
+    "url": "https://ag.ny.gov/consumer-frauds/debt-collection",
+    "source": "NY Attorney General",
+    "caseTypes": ["Consumer Debt"],
+    "language": "both"
+  },
+  {
+    "id": "criminal-records-lawhelpny",
+    "title_en": "Criminal records — sealing, expungement, and your rights (LawHelpNY)",
+    "title_es": "Antecedentes penales — sellado, eliminación y sus derechos (LawHelpNY)",
+    "url": "https://www.lawhelpny.org/issues/consequences-of-criminal-charges",
+    "source": "LawHelpNY",
+    "caseTypes": ["Criminal Defense"],
+    "language": "both"
+  },
+  {
+    "id": "criminal-defense-legal-aid",
+    "title_en": "Criminal defense — Legal Aid Society services",
+    "title_es": "Defensa penal — servicios de la Legal Aid Society",
+    "url": "https://legalaidnyc.org/programs-projects-units/criminal-defense-practice/",
+    "source": "The Legal Aid Society",
+    "caseTypes": ["Criminal Defense"],
+    "language": "en"
+  },
+  {
+    "id": "ny-criminal-procedure-law",
+    "title_en": "NY Criminal Procedure Law — rights of the accused (actual statute)",
+    "title_es": "Ley de Procedimiento Penal de NY — derechos del acusado (texto legal)",
+    "url": "https://www.nysenate.gov/legislation/laws/CPL",
+    "source": "NY State Legislature",
+    "caseTypes": ["Criminal Defense"],
+    "language": "en"
+  },
+  {
+    "id": "civil-rights-ag",
+    "title_en": "Civil rights — discrimination complaints (NY Attorney General)",
+    "title_es": "Derechos civiles — quejas por discriminación (Fiscal General de NY)",
+    "url": "https://ag.ny.gov/civil-rights",
+    "source": "NY Attorney General",
+    "caseTypes": ["Civil Rights"],
+    "language": "both"
+  },
+  {
+    "id": "civil-rights-issues-lawhelpny",
+    "title_en": "Civil rights and discrimination guides — LawHelpNY",
+    "title_es": "Guías de derechos civiles y discriminación — LawHelpNY",
+    "url": "https://www.lawhelpny.org/issues/discrimination-and-civil-rights",
+    "source": "LawHelpNY",
+    "caseTypes": ["Civil Rights"],
+    "language": "both"
+  },
+  {
+    "id": "nyc-human-rights-law",
+    "title_en": "NYC Human Rights Law — protections against discrimination (actual law)",
+    "title_es": "Ley de Derechos Humanos de NYC — protecciones contra discriminación (ley)",
+    "url": "https://www.nysenate.gov/legislation/laws/EXC/A15",
+    "source": "NY State Legislature",
+    "caseTypes": ["Civil Rights", "Employment"],
+    "language": "en"
+  },
+  {
+    "id": "health-issues-lawhelpny",
+    "title_en": "Health law guides — insurance, billing, patients' rights (LawHelpNY)",
+    "title_es": "Guías de derecho de salud — seguro, facturación, derechos del paciente",
+    "url": "https://www.lawhelpny.org/issues/health",
+    "source": "LawHelpNY",
+    "caseTypes": ["Health Law"],
+    "language": "both"
+  },
+  {
+    "id": "nylag-health",
+    "title_en": "NYLAG health law project — insurance denials and billing disputes",
+    "title_es": "Proyecto de derecho de salud de NYLAG — negaciones de seguro y disputas",
+    "url": "https://nylag.org/gethelp/",
+    "source": "NYLAG",
+    "caseTypes": ["Health Law"],
+    "language": "en"
+  }
+]

@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "home": "Home",
+    "orgs": "Find Help",
+    "guides": "Guides",
+    "tracker": "My Outreach"
+  },
+  "home": {
+    "title": "NYC Legal Aid Finder",
+    "subtitle": "Free legal help for New Yorkers",
+    "description": "All information stays private on your device. No account needed.",
+    "find_cta": "Find legal help",
+    "find_desc": "Match organizations to your situation",
+    "tracker_cta": "My Outreach",
+    "tracker_desc": "orgs tracked",
+    "tracker_empty_desc": "Start tracking",
+    "guides_cta": "Guides",
+    "guides_desc": "Plain-language articles for your case type",
+    "needs_attention": "Needs attention",
+    "no_attention": "No follow-ups needed",
+    "follow_up_overdue": "No response in {{days}} days",
+    "disclaimer": "This app helps you find resources — it is not legal advice."
+  },
+  "orgs": {
+    "title": "Find Legal Help",
+    "subtitle": "Answer 3 quick questions to see which organizations can help you.",
+    "walk_ins": "Walk-ins accepted",
+    "phone": "Phone",
+    "hours": "Hours",
+    "languages": "Languages",
+    "website": "Visit website",
+    "income_limit": "Income limit: {{pct}}% FPL",
+    "no_results": "No organizations match your selections. Try broadening your filters.",
+    "results_count": "{{count}} organization found",
+    "results_count_plural": "{{count}} organizations found",
+    "start_over": "Start over",
+    "add_outreach": "Add to My Outreach",
+    "added_outreach": "Added to My Outreach",
+    "case_types_handled": "Case types",
+    "boroughs_served": "Boroughs"
+  },
+  "steps": {
+    "step": "Step {{n}} of 3",
+    "back": "Back",
+    "step1_title": "Which borough are you in?",
+    "step2_title": "What kind of legal help do you need?",
+    "step3_title": "What is your approximate annual household income?",
+    "any_borough": "Any / Not sure",
+    "any_case": "Not sure yet"
+  },
+  "boroughs": {
+    "Manhattan": "Manhattan",
+    "Brooklyn": "Brooklyn",
+    "Bronx": "Bronx",
+    "Queens": "Queens",
+    "Staten Island": "Staten Island"
+  },
+  "caseTypes": {
+    "Housing": "Housing",
+    "Immigration": "Immigration",
+    "Benefits": "Public Benefits",
+    "Consumer Debt": "Consumer Debt",
+    "Family Law": "Family Law",
+    "Employment": "Employment",
+    "Criminal Defense": "Criminal Defense",
+    "Civil Rights": "Civil Rights",
+    "Health Law": "Health Law",
+    "Domestic Violence": "Domestic Violence",
+    "Divorce": "Divorce",
+    "Child Custody": "Child Custody",
+    "Civil / Small Claims": "Civil / Small Claims"
+  },
+  "income": {
+    "under_15k": "Under $15,000",
+    "15k_25k": "$15,000 – $25,000",
+    "25k_40k": "$25,000 – $40,000",
+    "40k_55k": "$40,000 – $55,000",
+    "over_55k": "Over $55,000"
+  },
+  "eligibility": {
+    "likely": "Likely eligible",
+    "check": "Check income",
+    "unlikely": "May not qualify",
+    "likely_desc": "Your income appears to be within this organization's limit.",
+    "check_desc": "Your income is near the limit — call to confirm eligibility.",
+    "unlikely_desc": "Your income may be above this organization's limit."
+  },
+  "tracker": {
+    "title": "My Outreach",
+    "subtitle": "Organizations you are tracking. All data stays on your device.",
+    "empty": "You haven't added any organizations yet. Use Find Help to get started.",
+    "status_saved": "Not contacted yet",
+    "status_contacted": "Contacted",
+    "status_org_replied": "Org followed up",
+    "mark_contacted": "I contacted them",
+    "mark_org_replied": "They followed up with me",
+    "reset": "Start over",
+    "notes_placeholder": "Add notes about your contact with this org...",
+    "contacted_date": "Date I contacted them",
+    "followup_reminder": "Follow up reminder",
+    "followup_reminder_hint": "We'll notify you on this date to follow up if you haven't heard back.",
+    "remove": "Remove",
+    "follow_up_due": "Follow up",
+    "overdue_label": "No response in {{days}} days",
+    "resolved_label": "They followed up with you"
+  },
+  "guides": {
+    "title": "Legal Guides",
+    "subtitle": "Plain-language articles and resources — no legalese.",
+    "filter_label": "Filter by case type",
+    "all_types": "All topics",
+    "source": "Source",
+    "open_guide": "Read guide",
+    "empty": "No guides found for this topic yet.",
+    "language_both": "EN + ES",
+    "language_en": "English only",
+    "language_es": "Spanish only"
+  },
+  "notifications": {
+    "permission_prompt": "Allow notifications so we can remind you to follow up with organizations.",
+    "reminder_title": "Time to follow up",
+    "reminder_body": "Don't forget to follow up with {{orgName}}."
+  },
+  "errors": {
+    "load_failed": "We couldn't load this information. Please try refreshing the page.",
+    "storage_failed": "We couldn't save your data. Please check that your browser allows local storage."
+  }
+}
