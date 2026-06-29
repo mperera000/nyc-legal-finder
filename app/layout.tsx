@@ -3,6 +3,18 @@ import { Geist, Domine } from "next/font/google";
 import "./globals.css";
 import I18nProvider from "@/components/I18nProvider";
 import NavBar from "@/components/NavBar";
+import { Analytics } from '@vercel/analytics/next';
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
+}
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 const domine = Domine({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-domine" });

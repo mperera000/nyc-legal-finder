@@ -46,7 +46,7 @@ export default function HomeScreen() {
       <div className="bg-indigo-50 border border-indigo-200 rounded-2xl px-5 py-4">
         <p className="text-sm font-semibold text-indigo-900">You&rsquo;re not alone.</p>
         <p className="text-xs text-indigo-600 mt-1 leading-relaxed">
-          Free legal help is available in NYC. This tool will help you find the right organization and keep track of your outreach — one step at a time.
+          Free legal help is available in NYC. This tool will help you find the right organization and keep track of your outreach.
         </p>
       </div>
 
